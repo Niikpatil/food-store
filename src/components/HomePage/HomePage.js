@@ -1,11 +1,12 @@
 import Header from "../Layouts/Header";
 import Footer from "../Layouts/Footer";
+import PizzaPage from "../PizzaPage/PizzaPage";
 
 const HomePage = () => {
   return (
     <div>
       <Header />
-      <div className="mt-2 p-5">{/* <PizzaPage /> */}</div>
+      <PizzaPage />
       <Footer />
     </div>
   );

@@ -2,10 +2,10 @@ import {
   ADD_CART_PIZZA,
   REMOVE_CART_PIZZA,
   QUANTITY_CART_PIZZA,
-  CLEAR_CART_PIZZA,
+  // CLEAR_CART_PIZZA,
 } from "../constants/pizzaTypes";
 
-export const addPizza = (itemId) => {
+export const addToCart = (itemId) => {
   return {
     type: ADD_CART_PIZZA,
     payload: {
