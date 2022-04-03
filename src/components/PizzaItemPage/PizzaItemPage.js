@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { addToCart } from "../../redux/actions/pizzaActions";
 
 const PizzaItemPage = ({ PizzaList, addToCart }) => {
@@ -14,19 +15,16 @@ const PizzaItemPage = ({ PizzaList, addToCart }) => {
             <h5 className="card-title">{PizzaList.title}</h5>
             <p className="card-text">{PizzaList.description}</p>
             <p className="card-text">{PizzaList.price}</p>
-            <p className="card-text">
+            <p className="card-text ">
+              <Link to="cart">
+                <button className="btn btn-sm btn-danger">View Cart</button>
+              </Link>
+
               <button
                 onClick={() => addToCart(PizzaList.id)}
-                // type="button"
                 className="m-3 btn btn-sm btn-warning"
               >
                 Add Cart
-              </button>
-              <button
-                // type="button"
-                className="btn btn-sm btn-danger"
-              >
-                View Cart
               </button>
             </p>
           </div>
