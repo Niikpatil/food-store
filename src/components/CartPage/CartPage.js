@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import CartItemPage from "../CartItemPage/CartItemPage";
 
 const CartPage = ({ cart }) => {
+  const [totalAmount, setTotalAmount] = useState(0);
+  const [cartItem, setCartItem] = useState(0);
+
+  useEffect(() => {
+    let items = 0;
+    let price = 0;
+
+    cart.forEach((item) => {
+      items += item.qty;
+      price += item.qty * item.price;
+    });
+
+    setCartItem(items);
+    setTotalAmount(price);
+  }, [cart, totalAmount, cartItem, setTotalAmount, setCartItem]);
+
   return (
     <div className="container">
+      {/* Responsible for Cart List item */}
       <div className="row">
         <div className="col-6 mt-4 cart">
           {cart.map((itemList) => (
@@ -12,37 +29,40 @@ const CartPage = ({ cart }) => {
           ))}
         </div>
 
+        {/* Responsible for price,total, summry */}
         <div className="col-md-5 col-lg-4 order-md-last">
           <h4 className="d-flex justify-content-between align-items-center mb-3">
             <span className="text-primary">Your cart</span>
-            {/* <span className="badge bg-primary rounded-pill">3</span> */}
+            {/* <span className="badge bg-primary rounded-pill">{cartItem}</span> */}
           </h4>
           <ul className="list-group mb-3">
             <li className="list-group-item d-flex justify-content-between lh-sm">
               <div>
-                <h6 className="my-0">Items</h6>
+                <h6 className="my-0">Product Items</h6>
                 <small className="text-muted">Brief description</small>
               </div>
-              <span className="text-muted">$12</span>
+              <span className="text-muted"> {cartItem} </span>
             </li>
             <li className="list-group-item d-flex justify-content-between lh-sm">
               <div>
-                <h6 className="my-0">Product MRP</h6>
-                <small className="text-muted">Brief description</small>
+                <h6 className="my-0">Discount</h6>
+                <small className="text-muted">Limited Offer</small>
               </div>
-              <span className="text-muted">$5</span>
+              <span className="text-muted"> - $10 </span>
             </li>
-            {/* <li className="list-group-item d-flex justify-content-between bg-light">
-              <div className="text-success">
-                <h6 className="my-0">Promo code</h6>
+            <li className="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 className="my-0">MRP</h6>
+                <small className="text-muted">With CGST+SGST </small>
               </div>
-              <span className="text-success">−$5</span>
-            </li> */}
+              <span className="text-muted">$ {totalAmount}</span>
+            </li>
             <li className="list-group-item d-flex justify-content-between bg-light">
               <div className="text-danger">
                 <h6 className="my-0">Total</h6>
+                <small className="text-muted">Including Discount</small>
               </div>
-              <strong>$20</strong>
+              <strong>{totalAmount <= 0 ? "0" : `${totalAmount - 10}`}</strong>
             </li>
           </ul>
         </div>

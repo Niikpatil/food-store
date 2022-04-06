@@ -47,8 +47,8 @@ const pizzaReducer = (state = initialState, action) => {
         (plist) => plist.id === action.payload.id
       );
       // Check if Item is in cart already
-      const inCart = state.cart.find((item) =>
-        item.id === action.payload.id ? true : false
+      const inCart = state.cart.find((x) =>
+        x.id === action.payload.id ? true : false
       );
 
       return {
@@ -64,14 +64,16 @@ const pizzaReducer = (state = initialState, action) => {
 
     case REMOVE_CART_PIZZA:
       return {
-        // ...state,
-        // numOfPizza: state.numOfPizza - 1,
+        ...state,
+        cart: state.cart.filter((x) => x.id !== action.payload.id),
       };
 
     case QUANTITY_CART_PIZZA:
       return {
-        // ...state,
-        // numOfPizza: state.numOfPizza - 1,
+        ...state,
+        cart: state.cart.map((x) =>
+          x.id === action.payload.id ? { ...x, qty: +action.payload.qty } : x
+        ),
       };
 
     default:

@@ -14,7 +14,7 @@ export const addToCart = (itemId) => {
   };
 };
 
-export const removePizza = (itemId) => {
+export const removeFromCart = (itemId) => {
   return {
     type: REMOVE_CART_PIZZA,
     payload: {
