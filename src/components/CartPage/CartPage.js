@@ -24,9 +24,13 @@ const CartPage = ({ cart }) => {
       {/* Responsible for Cart List item */}
       <div className="row">
         <div className="col-6 mt-4 cart">
-          {cart.map((itemList) => (
-            <CartItemPage key={itemList.id} CartList={itemList} />
-          ))}
+          {cart.length !== 0 ? (
+            cart.map((itemList) => (
+              <CartItemPage key={itemList.id} CartList={itemList} />
+            ))
+          ) : (
+            <h3>Cart is Empty</h3>
+          )}
         </div>
 
         {/* Responsible for price,total, summry */}
@@ -48,21 +52,23 @@ const CartPage = ({ cart }) => {
                 <h6 className="my-0">Discount</h6>
                 <small className="text-muted">Limited Offer</small>
               </div>
-              <span className="text-muted"> - $10 </span>
+              <span className="text-muted"> - ₹10 </span>
             </li>
             <li className="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 className="my-0">MRP</h6>
                 <small className="text-muted">With CGST+SGST </small>
               </div>
-              <span className="text-muted">$ {totalAmount}</span>
+              <span className="text-muted">₹ {totalAmount}</span>
             </li>
             <li className="list-group-item d-flex justify-content-between bg-light">
               <div className="text-danger">
                 <h6 className="my-0">Total</h6>
                 <small className="text-muted">Including Discount</small>
               </div>
-              <strong>{totalAmount <= 0 ? "0" : `${totalAmount - 10}`}</strong>
+              <strong>
+                {totalAmount <= 0 ? "0" : `₹ ${totalAmount - 10}`}
+              </strong>
             </li>
           </ul>
         </div>

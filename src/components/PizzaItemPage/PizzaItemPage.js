@@ -14,7 +14,7 @@ const PizzaItemPage = ({ PizzaList, addToCart }) => {
           <div className="card-body">
             <h5 className="card-title">{PizzaList.title}</h5>
             <p className="card-text">{PizzaList.description}</p>
-            <p className="card-text">{PizzaList.price}</p>
+            <p className="card-text"> ₹ {PizzaList.price}</p>
             <p className="card-text ">
               <Link to="cart">
                 <button className="btn btn-sm btn-danger">View Cart</button>

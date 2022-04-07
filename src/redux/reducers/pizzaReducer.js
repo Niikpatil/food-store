@@ -2,7 +2,6 @@ import {
   ADD_CART_PIZZA,
   REMOVE_CART_PIZZA,
   QUANTITY_CART_PIZZA,
-  // CLEAR_CART_PIZZA,
 } from "../constants/pizzaTypes";
 
 const initialState = {
@@ -54,10 +53,8 @@ const pizzaReducer = (state = initialState, action) => {
       return {
         ...state,
         cart: inCart
-          ? state.cart.map((item) =>
-              item.id === action.payload.id
-                ? { ...item, qty: item.qty + 1 }
-                : item
+          ? state.cart.map((x) =>
+              x.id === action.payload.id ? { ...x, qty: x.qty + 1 } : x
             )
           : [...state.cart, { ...item, qty: 1 }],
       };
@@ -71,8 +68,10 @@ const pizzaReducer = (state = initialState, action) => {
     case QUANTITY_CART_PIZZA:
       return {
         ...state,
-        cart: state.cart.map((x) =>
-          x.id === action.payload.id ? { ...x, qty: +action.payload.qty } : x
+        cart: state.cart.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, qty: +action.payload.qty }
+            : item
         ),
       };
 

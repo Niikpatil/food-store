@@ -23,7 +23,7 @@ export const removeFromCart = (itemId) => {
   };
 };
 
-export const quantityPizza = (itemId, value) => {
+export const quantityCart = (itemId, value) => {
   return {
     type: QUANTITY_CART_PIZZA,
     payload: {

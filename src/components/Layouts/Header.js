@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+// import "./Header.style.css";
 
 const Header = ({ cart }) => {
   const [cartCount, setCartCount] = useState(0);
@@ -13,16 +14,15 @@ const Header = ({ cart }) => {
 
     setCartCount(count);
   }, [cart, cartCount]);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-secondary bg-light shadow-sm">
-      <div className="container-fluid">
-        <nav className="navbar navbar-light ">
-          <h5>
-            <a href="/" className="text-decoration-none">
-              Delicious Pizza 🍕
-            </a>
-          </h5>
-        </nav>
+      <div className="container">
+        <h5>
+          <a href="/" className="text-decoration-none">
+            Delicious Pizza 🍕
+          </a>
+        </h5>
 
         <div
           className="collapse navbar-collapse justify-content-end"
