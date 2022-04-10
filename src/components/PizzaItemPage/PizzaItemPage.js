@@ -9,6 +9,12 @@ const PizzaItemPage = ({ PizzaList, addToCart }) => {
       <div className="row g-0">
         <div className="col-md-4 bg-secondary text-white">
           {/* <img src="..." className="img-fluid rounded-start" alt="..."> */}
+          <img
+            src={PizzaList.imageURL}
+            style={{ maxWidth: "230px", maxHeight: "230px" }}
+            alt=""
+            className="productImg"
+          />
         </div>
         <div className="col-md-8">
           <div className="card-body">
