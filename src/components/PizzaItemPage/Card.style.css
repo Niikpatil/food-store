@@ -1,0 +1,20 @@
+.card-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.card-item:hover {
+  box-shadow: 0 3px 19px 0 rgba(131, 129, 129, 0.1);
+  opacity: 1;
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 230px;
+  height: 200px;
+  /* padding: 5px; */
+}

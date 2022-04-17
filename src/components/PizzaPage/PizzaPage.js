@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import PizzaItemPage from "../PizzaItemPage/PizzaItemPage";
+import "./PizzaPage.style.css";
 
 const PizzaPage = ({ pizzaList }) => {
   return (
-    <div>
+    <div className="basic-grid">
       {pizzaList.map((plist) => (
         <PizzaItemPage key={plist.id} PizzaList={plist} />
       ))}

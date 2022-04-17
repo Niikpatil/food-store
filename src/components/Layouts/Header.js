@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { BsFillCartCheckFill } from "react-icons/bs";
 
 const Header = ({ cart }) => {
   const [cartCount, setCartCount] = useState(0);
@@ -23,16 +24,14 @@ const Header = ({ cart }) => {
           </a>
         </h5>
 
-        <div
-          className="collapse navbar-collapse justify-content-end"
-          id="navbarsExampleDefault"
-        >
-          <Link to="cart" className="btn btn-secondary btn-sm ml-3">
-            <i className="fa fa-shopping-cart"></i>Cart
-            <span className="badge badge-light">{cartCount}</span>
-            <div className="cart">
-              <i className="fa fa-shopping-cart"></i>
-            </div>
+        <div className="collapse navbar-collapse justify-content-end">
+          <Link to="cart">
+            <i className="position-relative">
+              <BsFillCartCheckFill />
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {cartCount}
+              </span>
+            </i>
           </Link>
         </div>
       </div>

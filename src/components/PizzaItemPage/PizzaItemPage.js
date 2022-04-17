@@ -1,40 +1,26 @@
 import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { addToCart } from "../../redux/actions/pizzaActions";
+import { connect } from "react-redux";
+
+import "./Card.style.css";
 
 const PizzaItemPage = ({ PizzaList, addToCart }) => {
   return (
-    <div className="card m-3" style={{ maxWidth: "540px" }}>
-      <div className="row g-0">
-        <div className="col-md-4 bg-secondary text-white">
-          {/* <img src="..." className="img-fluid rounded-start" alt="..."> */}
-          <img
-            src={PizzaList.imageURL}
-            style={{ maxWidth: "230px", maxHeight: "230px" }}
-            alt=""
-            className="productImg"
-          />
+    <div className="card-item">
+      <div className="basic-grid">
+        <img src={PizzaList.imageURL} alt="Food Images" />
+        <div>
+          <b>{PizzaList.title}</b>
+          <p>{PizzaList.description}</p>
+          <h5>₹ {PizzaList.price}</h5>
         </div>
-        <div className="col-md-8">
-          <div className="card-body">
-            <h5 className="card-title">{PizzaList.title}</h5>
-            <p className="card-text">{PizzaList.description}</p>
-            <p className="card-text"> ₹ {PizzaList.price}</p>
-            <p className="card-text ">
-              <Link to="cart">
-                <button className="btn btn-sm btn-danger">View Cart</button>
-              </Link>
-
-              <button
-                onClick={() => addToCart(PizzaList.id)}
-                className="m-3 btn btn-sm btn-warning"
-              >
-                Add Cart
-              </button>
-            </p>
-          </div>
-        </div>
+        <button
+          onClick={() => addToCart(PizzaList.id)}
+          className="btn btn-sm btn-warning"
+        >
+          Add Cart
+        </button>
       </div>
     </div>
   );
@@ -47,3 +33,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(null, mapDispatchToProps)(PizzaItemPage);
+
+// export default

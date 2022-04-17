@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { BsTrash } from "react-icons/bs";
+
 import { connect } from "react-redux";
 import { removeFromCart, quantityCart } from "../../redux/actions/pizzaActions";
 
@@ -13,15 +15,15 @@ const CartItemPage = ({ CartList, removeFromCart, quantityCart }) => {
   return (
     <div className="card m-2">
       <div className="card-header">
-        <p className="card-title text-bold">
+        <div className="card-title text-bold">
           <b>{CartList.title}</b>
-        </p>
-        <button
-          onClick={() => removeFromCart(CartList.id)}
-          // type="button"
-          className="btn-close btn-sm"
-          aria-label="Close"
-        ></button>
+          <h2
+            className="btn btn-sm"
+            onClick={() => removeFromCart(CartList.id)}
+          >
+            <BsTrash />
+          </h2>
+        </div>
       </div>
       <div className="card-body">
         <p className="card-text">{CartList.description}</p>
