@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import CartItemPage from "../CartItemPage/CartItemPage";
+import "./CartPage.style.css";
 
 const CartPage = ({ cart }) => {
   const [totalAmount, setTotalAmount] = useState(0);
@@ -20,55 +21,61 @@ const CartPage = ({ cart }) => {
   }, [cart, totalAmount, cartItem, setTotalAmount, setCartItem]);
 
   return (
-    <div className="row justify-content-around">
-      {/* Responsible for Cart List item */}
-      <div className="col-4 mt-4 cart">
+    // Responsible for Cart ListItem
+    <div className="card-grid">
+      <span>
         {cart.length !== 0 ? (
           cart.map((itemList) => (
             <CartItemPage key={itemList.id} CartList={itemList} />
           ))
         ) : (
-          <h3>Cart is Empty</h3>
+          <h3>Oops ! Cart is Empty</h3>
         )}
-      </div>
+      </span>
 
       {/* Responsible for price,total, summry */}
-
-      <div className="col-4 col-lg-4">
-        <h4 className="d-flex justify-content-between align-items-center mb-3">
-          <span className="text-primary">Your cart</span>
-          {/* <span className="badge bg-primary rounded-pill">{cartItem}</span> */}
-        </h4>
-        <ul className="list-group mb-3">
-          <li className="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 className="my-0">Product Items</h6>
-              <small className="text-muted">Brief description</small>
-            </div>
-            <span className="text-muted"> {cartItem} </span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 className="my-0">Discount</h6>
-              <small className="text-muted">Limited Offer</small>
-            </div>
-            <span className="text-muted"> - ₹10 </span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 className="my-0">MRP</h6>
-              <small className="text-muted">With CGST+SGST </small>
-            </div>
-            <span className="text-muted">₹ {totalAmount}</span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between bg-light">
-            <div className="text-danger">
-              <h6 className="my-0">Total</h6>
-              <small className="text-muted">Including Discount</small>
-            </div>
-            <strong>{totalAmount <= 0 ? "0" : `₹ ${totalAmount - 10}`}</strong>
-          </li>
-        </ul>
+      <div className="cart-container">
+        <table className="table shadow-sm">
+          <thead className="table-light">
+            <tr>
+              <th colspan="2">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Product Items
+                <p>
+                  <small className="text-muted">(number of items)</small>
+                </p>
+              </td>
+              <td>{cartItem}</td>
+            </tr>
+            <tr>
+              <td>
+                Discount
+                <p>
+                  <small className="text-muted">Mega offer</small>
+                </p>
+              </td>
+              <td>₹ - 65</td>
+            </tr>
+            <tr>
+              <td>MRP</td>
+              <td>₹ {totalAmount}</td>
+            </tr>
+            <tr>
+              <td>
+                <b>Total Price</b>
+              </td>
+              <td>
+                <b className="text-danger">
+                  {totalAmount <= 0 ? "0" : `₹ ${totalAmount - 65}`}
+                </b>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );

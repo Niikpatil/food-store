@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { BsTrash } from "react-icons/bs";
-
 import { connect } from "react-redux";
 import { removeFromCart, quantityCart } from "../../redux/actions/pizzaActions";
+import "./CartItemPage.style.css";
 
 const CartItemPage = ({ CartList, removeFromCart, quantityCart }) => {
   const [itemQt, setItemQt] = useState(CartList.qty);
@@ -13,37 +13,38 @@ const CartItemPage = ({ CartList, removeFromCart, quantityCart }) => {
   };
 
   return (
-    <div className="card m-2">
-      <div className="card-header">
-        <div className="card-title text-bold">
-          <b>{CartList.title}</b>
-          <h2
-            className="btn btn-sm"
-            onClick={() => removeFromCart(CartList.id)}
-          >
-            <BsTrash />
-          </h2>
-        </div>
-      </div>
-      <div className="card-body">
-        <p className="card-text">{CartList.description}</p>
-        <p className="card-text">₹{CartList.price}</p>
+    <div className="card-container shadow-sm">
+      <img src={CartList.imageURL} className="foodpicture" alt="Food Images" />
 
-        <div className="input-group input-group-sm ">
-          <span className="input-group-text" id="qty">
-            Quntity
-          </span>
+      <span>
+        <small>
+          <p>{CartList.title}</p>
+          <p>{CartList.description}</p>
+        </small>
+        <b>₹{CartList.price}</b>
+      </span>
+
+      <span>
+        <p>
+          <b>Quantity </b>
+        </p>
+        <p>
           <input
             type="number"
-            min="1"
-            id="qty"
+            // id="qty"
             name="qty"
+            min="1"
+            max="7"
+            size="2"
             value={itemQt}
             onChange={onChangeHandler}
-            className="form-control"
           />
-        </div>
-      </div>
+        </p>
+      </span>
+
+      <h2 className="btn btn-sm" onClick={() => removeFromCart(CartList.id)}>
+        <BsTrash />
+      </h2>
     </div>
   );
 };

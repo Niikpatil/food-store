@@ -1,8 +1,7 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { addToCart } from "../../redux/actions/pizzaActions";
 import { connect } from "react-redux";
-
 import "./Card.style.css";
 
 const PizzaItemPage = ({ PizzaList, addToCart }) => {
@@ -12,15 +11,24 @@ const PizzaItemPage = ({ PizzaList, addToCart }) => {
         <img src={PizzaList.imageURL} alt="Food Images" />
         <div>
           <b>{PizzaList.title}</b>
-          <p>{PizzaList.description}</p>
+          <p>
+            <small>{PizzaList.description}</small>
+          </p>
           <h5>₹ {PizzaList.price}</h5>
         </div>
-        <button
-          onClick={() => addToCart(PizzaList.id)}
-          className="btn btn-sm btn-warning"
-        >
-          Add Cart
-        </button>
+        <div>
+          <span className="desc">
+            <button
+              onClick={() => addToCart(PizzaList.id)}
+              className="btn btn-sm btn-warning me-md-2"
+            >
+              Add Cart
+            </button>
+            <Link to="cart">
+              <button className="btn btn-sm btn-danger ">View Cart</button>
+            </Link>
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -31,7 +39,4 @@ const mapDispatchToProps = (dispatch) => {
     addToCart: (id) => dispatch(addToCart(id)),
   };
 };
-
 export default connect(null, mapDispatchToProps)(PizzaItemPage);
-
-// export default

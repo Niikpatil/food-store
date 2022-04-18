@@ -79,6 +79,94 @@ const dataPizza = [
     imageURL:
       "https://images.unsplash.com/photo-1573821663912-569905455b1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
   },
+  {
+    id: 11,
+    title: "Paneer Pizza",
+    description: "Pizza With Panner cube",
+    price: 300,
+    imageURL:
+      "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    id: 12,
+    title: "Paneer Pizza",
+    description: "Pizza With Panner cube",
+    price: 300,
+    imageURL:
+      "https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+  },
+  {
+    id: 13,
+    title: "Paneer Pizza",
+    description: "Pizza With Panner cube",
+    price: 300,
+    imageURL:
+      "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?cs=srgb&dl=pexels-kristina-paukshtite-1146760.jpg&fm=jpg",
+  },
+  {
+    id: 14,
+    title: "Paneer Pizza",
+    description: "Pizza With Panner cube",
+    price: 300,
+    imageURL:
+      "https://images.pexels.com/photos/2471171/pexels-photo-2471171.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+  },
+  {
+    id: 15,
+    title: "Paneer Pizza",
+    description: "Pizza With Panner cube",
+    price: 300,
+    imageURL:
+      "https://images.unsplash.com/photo-1552539618-7eec9b4d1796?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fG1hcmdoZXJpdGElMjBwaXp6YXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
+  },
+  {
+    id: 16,
+    title: "Paneer Pizza",
+    description: "Pizza With Panner cube",
+    price: 300,
+    imageURL:
+      "https://images.unsplash.com/photo-1585238342024-78d387f4a707?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+  },
+  {
+    id: 17,
+    title: "Paneer Pizza",
+    description: "Pizza With Panner cube",
+    price: 300,
+    imageURL:
+      "https://images.unsplash.com/photo-1607974347625-36a0bcb6a260?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2hvY29sYXRlJTIwZG9udXR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+  },
+  {
+    id: 18,
+    title: "Paneer Pizza",
+    description: "Pizza With Panner cube",
+    price: 300,
+    imageURL:
+      "https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZG9udXR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+  },
+  {
+    id: 19,
+    title: "Paneer Pizza",
+    description: "Pizza With Panner cube",
+    price: 300,
+    imageURL:
+      "https://images.unsplash.com/photo-1631397833242-fc6213046352?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGRvbnV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
+  },
+  {
+    id: 20,
+    title: "Paneer Pizza",
+    description: "Pizza With Panner cube",
+    price: 300,
+    imageURL:
+      "https://images.unsplash.com/photo-1634215751955-5bdb12db6c0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHdhZmZsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
+  },
+  {
+    id: 21,
+    title: "Paneer Pizza",
+    description: "Pizza With Panner cube",
+    price: 300,
+    imageURL:
+      "https://images.unsplash.com/photo-1619015483078-6abcf9238311?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmFrbGF2YXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
+  },
 ];
 
 export default dataPizza;
