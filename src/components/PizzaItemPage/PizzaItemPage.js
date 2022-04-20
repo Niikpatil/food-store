@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../redux/actions/pizzaActions";
 import { connect } from "react-redux";
-import "./Card.style.css";
+import "./PizzaItemPage.style.css";
 
 const PizzaItemPage = ({ PizzaList, addToCart }) => {
   return (

@@ -38,7 +38,7 @@ const CartPage = ({ cart }) => {
         <table className="table shadow-sm">
           <thead className="table-light">
             <tr>
-              <th colspan="2">Amount</th>
+              <th colSpan="2">Amount</th>
             </tr>
           </thead>
           <tbody>

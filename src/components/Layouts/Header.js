@@ -16,13 +16,13 @@ const Header = ({ cart }) => {
   }, [cart, cartCount]);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-secondary bg-light shadow-sm">
+    <nav className="navbar navbar-expand-sm bg-warning fixed-top shadow-sm p-3">
       <div className="container">
-        <h5>
-          <a href="/" className="text-decoration-none">
-            Delicious Pizza 🍕
-          </a>
-        </h5>
+        <header className="navbar navbar-light ">
+          <Link to="/" className=" navbar-brand">
+            Delicious Pizza
+          </Link>
+        </header>
 
         <div className="collapse navbar-collapse justify-content-end">
           <Link to="cart">

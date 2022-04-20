@@ -5,10 +5,12 @@ import "./PizzaPage.style.css";
 
 const PizzaPage = ({ pizzaList }) => {
   return (
-    <div className="basic-grid">
-      {pizzaList.map((plist) => (
-        <PizzaItemPage key={plist.id} PizzaList={plist} />
-      ))}
+    <div className="cantainer-top">
+      <div className="basic-grid">
+        {pizzaList.map((plist) => (
+          <PizzaItemPage key={plist.id} PizzaList={plist} />
+        ))}
+      </div>
     </div>
   );
 };
