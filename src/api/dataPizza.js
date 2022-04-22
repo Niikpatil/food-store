@@ -81,7 +81,7 @@ const dataPizza = [
   },
   {
     id: 11,
-    title: "Paneer Pizza",
+    title: "Special Veg Pizza",
     description: "Pizza With Panner cube",
     price: 300,
     imageURL:
